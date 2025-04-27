@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
-import { CheckCircle, XCircle, LogIn, UserPlus, ArrowRight, CheckSquare, Clock, Flag, ChevronRight } from 'lucide-react';
+import { CheckCircle, XCircle, LogIn, UserPlus, ArrowRight, CheckSquare, Clock, Flag, ChevronRight ,Eye, EyeOff} from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const AuthPage = () => {
@@ -14,6 +14,8 @@ const AuthPage = () => {
   });
   const [loading, setLoading] = useState(false);
   const { login, register } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -240,32 +242,54 @@ const AuthPage = () => {
                 />
               </div>
               
-              <div>
+              <div className="relative">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
                   placeholder="••••••••"
                   required
                 />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center pt-6"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-gray-500" />
+                  )}
+                </button>
               </div>
               
               {!isLogin && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
-                  <input
-                    type="password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="••••••••"
-                    required={!isLogin}
-                  />
-                </div>
+             <div className="relative">
+             <label className="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+             <input
+               type={showConfirmPassword ? "text" : "password"}
+               name="confirmPassword"
+               value={formData.confirmPassword}
+               onChange={handleChange}
+               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+               placeholder="••••••••"
+               required={!isLogin}
+             />
+             <button
+               type="button"
+               className="absolute inset-y-0 right-0 pr-3 flex items-center pt-6"
+               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+             >
+               {showConfirmPassword ? (
+                 <EyeOff className="h-5 w-5 text-gray-500" />
+               ) : (
+                 <Eye className="h-5 w-5 text-gray-500" />
+               )}
+             </button>
+           </div>
               )}
               
               <div className="pt-2">
