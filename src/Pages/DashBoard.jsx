@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { TaskProvider } from '../Context/TaskContext';
-import Navbar from '../components/Navbar';
+import Navbar from '../Components/Navbar';
 import TaskForm from '../Components/TaskForm';
 import TaskList from '../Components/TaskList';
 import TaskFilter from '../Components/TaskFilter';

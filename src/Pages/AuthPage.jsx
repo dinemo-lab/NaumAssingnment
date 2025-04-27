@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import { CheckCircle, XCircle, LogIn, UserPlus, ArrowRight, CheckSquare, Clock, Flag, ChevronRight } from 'lucide-react';
