@@ -37,7 +37,7 @@ The application follows a modern design approach with:
 - Proper **error handling** and loading states to guide the user through the application.
 
 ## How to Run the Application
-   install this front end repo and the backend repo and start 
+   install this front end repo and the backend repo https://github.com/dinemo-lab/NaumBackend and start 
 
 ```bash
 npm run dev
