@@ -26,9 +26,6 @@ This is a task management application built with React and Tailwind CSS, featuri
 - Loading states and error handling to improve user experience.
 - Feedback with **toast notifications** for user actions.
 
-### Custom Hooks:
-- `useAuth`: Manages authentication state.
-- `useTasks`: Handles task-related operations like creating, editing, and deleting tasks.
 
 ## Design Approach
 
@@ -40,12 +37,7 @@ The application follows a modern design approach with:
 - Proper **error handling** and loading states to guide the user through the application.
 
 ## How to Run the Application
-
-To run the application, follow the steps below:
-
-### 1. Start the backend server:
-In the terminal, navigate to the `server` folder and start the server.
+   install this front end repo and the backend repo and start 
 
 ```bash
-cd server
 npm run dev
