@@ -1,12 +1,51 @@
-# React + Vite
+# Task Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a task management application built with React and Tailwind CSS, featuring user authentication and task management functionality. It allows users to manage their tasks with features like status toggling, task creation, and editing. The application also includes authentication, custom hooks for state management, and a clean, responsive UI.
 
-Currently, two official plugins are available:
+## Core Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **App.jsx**: Main application component with routing.
+- **Auth and Task contexts**: For state management of authentication and task data.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Authentication:
+- Login and Register forms.
+- Protected routes to ensure only authenticated users can access certain pages.
+- Authentication context and custom hook (`useAuth`) to manage user authentication state.
+
+### Task Management:
+- Task list with filtering options.
+- Task items that can be toggled between different statuses, edited, or deleted.
+- Task form for creating and editing tasks.
+- Task context and custom hook (`useTasks`) for task operations.
+
+### UI Components:
+- Modern and clean UI built with **Tailwind CSS**.
+- Responsive design for both mobile and desktop devices.
+- Loading states and error handling to improve user experience.
+- Feedback with **toast notifications** for user actions.
+
+### Custom Hooks:
+- `useAuth`: Manages authentication state.
+- `useTasks`: Handles task-related operations like creating, editing, and deleting tasks.
+
+## Design Approach
+
+The application follows a modern design approach with:
+- **Clean, minimalist UI**.
+- **Intuitive user experience** to easily manage tasks.
+- **Responsive layout** for all device sizes.
+- **Visual feedback** for user actions like task status change or error notifications.
+- Proper **error handling** and loading states to guide the user through the application.
+
+## How to Run the Application
+
+To run the application, follow the steps below:
+
+### 1. Start the backend server:
+In the terminal, navigate to the `server` folder and start the server.
+
+```bash
+cd server
+npm run dev
